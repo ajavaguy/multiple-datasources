@@ -1,7 +1,7 @@
 package com.example.multipledatasources.service.product;
 
-import com.example.multipledatasources.datasources.product.ProductRepository;
 import com.example.multipledatasources.model.product.Product;
+import com.example.multipledatasources.model.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
