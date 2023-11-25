@@ -11,7 +11,7 @@
         <result property="quantity" column="quantity"></result>
     </resultMap>
 
-    <select id="getAllProducts" resultType="product">
+    <select id="getAllProducts" resultMap="product">
         SELECT
             id,
             name,
