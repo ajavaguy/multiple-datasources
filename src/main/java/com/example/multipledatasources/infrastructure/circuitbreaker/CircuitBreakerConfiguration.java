@@ -27,7 +27,6 @@ public class CircuitBreakerConfiguration {
 
     private CircuitBreakerConfig getAddressByEmployeeId() {
         return restApiDefaultConfig()
-                .slowCallDurationThreshold(Duration.ofSeconds(3))
                 .build();
     }
 
@@ -37,14 +36,14 @@ public class CircuitBreakerConfiguration {
 
     private CircuitBreakerConfig.Builder defaultConfig() {
         return CircuitBreakerConfig.custom()
-                .failureRateThreshold(50)
+                .failureRateThreshold(100)
                 .slowCallRateThreshold(100)
                 .slowCallDurationThreshold(Duration.ofSeconds(3))
-                .minimumNumberOfCalls(100)
-                .slidingWindowSize(100)
+                .minimumNumberOfCalls(1)
+                .slidingWindowSize(1)
                 .slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED)
-                .waitDurationInOpenState(Duration.ofSeconds(60))
+                .waitDurationInOpenState(Duration.ofSeconds(15))
                 .permittedNumberOfCallsInHalfOpenState(10)
-                .automaticTransitionFromOpenToHalfOpenEnabled(false);
+                .automaticTransitionFromOpenToHalfOpenEnabled(true);
     }
 }

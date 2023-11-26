@@ -35,7 +35,7 @@ public class AddressAPIDataSource {
     }
 
     public Address fallbackGetAddressByEmployeeId(Integer employeeId, CallNotPermittedException exception) {
-        throw new RuntimeException(exception.getMessage());
+        return new Address();
     }
 
     private String addressUrl(Integer employeeId) {
